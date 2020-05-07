@@ -8,14 +8,27 @@ module Enumerable
     self
   end
 
+
+#   def my_each_with_index
+#     x=0
+#     until x > self.length - 1
+#       yield(self[x], x)
+#       x += 1
+#     end
+#     self
+#   end
+
+
   def my_each_with_index
     x=0
-    until x > self.length - 1
-      yield(self[x], x)
+    self.my_each do |name|
+      yield([name], x)
       x += 1
     end
     self
   end
+
+
 
 
 
